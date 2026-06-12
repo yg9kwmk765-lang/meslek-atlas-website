@@ -1,227 +1,117 @@
 const questions = [
 {
 question:"Hayalindeki gün hangisi?",
-answers:[
-{text:"🔧 Bir şey tamir etmek",type:"teknik"},
-{text:"👨‍🍳 Yemek yapmak",type:"yaratici"},
-{text:"💻 Yazılım geliştirmek",type:"teknoloji"},
-{text:"❤️ İnsanlara yardım etmek",type:"sosyal"},
-{text:"🚀 Kendi işimi kurmak",type:"girisimcilik"},
-]
+answers:["🔧 Teknik işler","💻 Teknoloji","❤️ İnsanlara yardım","🎨 Tasarım","🚀 İş kurmak"]
 },
-
 {
-question:"En çok hangi alanda çalışmak isterdin?",
-answers:[
-{text:"🔬 Bilim ve Teknoloji",type:"teknoloji"},
-{text:"📈 Finans ve İş",type:"girisimcilik"},
-{text:"🎨 Sanat ve Tasarım",type:"yaratici"},
-{text:"🏥 Sağlık",type:"sosyal"},
-{text:"⚙️ Üretim",type:"teknik"},
-]
+question:"En sevdiğin ders?",
+answers:["📐 Matematik","🧪 Fen","📚 Edebiyat","🎨 Resim","💼 Ekonomi"]
 },
-
 {
-question:"Hangisi seni daha çok heyecanlandırır?",
-answers:[
-{text:"🏗️ Büyük projeler",type:"teknik"},
-{text:"📝 Yeni şeyler öğrenmek",type:"teknoloji"},
-{text:"📢 İnsanları motive etmek",type:"sosyal"},
-{text:"🎨 Yeni fikirler",type:"yaratici"},
-{text:"🚀 Kendi işini kurmak",type:"girisimcilik"},
-]
+question:"Boş zamanda ne yaparsın?",
+answers:["🎮 Oyun","📖 Kitap","⚽ Spor","💻 Bilgisayar","🎵 Müzik"]
+},
+{
+question:"Nasıl çalışmayı seversin?",
+answers:["👥 Takım","🏠 Tek başıma","🌍 Seyahat","🛠 Sahada","🏢 Ofiste"]
+},
+{
+question:"Hangisi seni mutlu eder?",
+answers:["💰 Para","❤️ Yardım","🏆 Başarı","🎨 Üretmek","🚀 Liderlik"]
 }
 ];
 
-const scores={
-teknoloji:0,
-teknik:0,
-girisimcilik:0,
-sosyal:0,
-yaratici:0
-};
+let current=0;
 
-let currentQuestion=0;
+const q=document.querySelector(".subtitle");
+const a=document.querySelector(".answers-section");
+const p=document.querySelector(".progress-section p");
+const b=document.querySelector(".progress-bar");
 
-const questionElement=document.querySelector(".subtitle");
-const answersElement=document.querySelector(".answers-section");
-const progressText=document.querySelector(".progress-section p");
-const progressBar=document.querySelector(".progress-bar");
+function load(){
 
-function loadQuestion(){
+if(current>=questions.length){
 
-if(currentQuestion>=questions.length){
-
-showResult();
+finish();
 
 return;
 
 }
 
-let q=questions[currentQuestion];
+q.textContent=questions[current].question;
 
-questionElement.textContent=q.question;
+a.innerHTML="";
 
-answersElement.innerHTML="";
+questions[current].answers.forEach(item=>{
 
-q.answers.forEach(answer=>{
+let btn=document.createElement("button");
 
-let button=document.createElement("button");
+btn.className="answer-button";
 
-button.className="answer-button";
+btn.textContent=item;
 
-button.textContent=answer.text;
+btn.onclick=function(){
 
-button.onclick=function(){
+current++;
 
-scores[answer.type]++;
-
-currentQuestion++;
-
-loadQuestion();
+load();
 
 };
 
-answersElement.appendChild(button);
+a.appendChild(btn);
 
 });
 
-progressText.textContent=(currentQuestion+1)+" / "+questions.length+" Soru";
+p.textContent=(current+1)+" / "+questions.length+" Soru";
 
-progressBar.style.width=((currentQuestion+1)/questions.length*100)+"%";
-
-}
-
-function winner(){
-
-let best="";
-
-let max=-1;
-
-for(let key in scores){
-
-if(scores[key]>max){
-
-max=scores[key];
-
-best=key;
+b.style.width=((current+1)/questions.length*100)+"%";
 
 }
 
-}
+function finish(){
 
-return best;
+q.innerHTML="🧭 Kariyer DNA'n Hazır!";
 
-}
+a.innerHTML=`
 
-function resultInfo(type){
-
-switch(type){
-
-case "teknoloji":
-
-return{
-icon:"💻",
-title:"Teknoloji",
-jobs:["👨‍💻 Yazılımcı","🤖 Yapay Zeka","📊 Veri Analisti"]
-};
-
-case "teknik":
-
-return{
-icon:"🔧",
-title:"Teknik",
-jobs:["⚡ Elektrikçi","🚗 Oto Tamir","🏗️ Tekniker"]
-};
-
-case "girisimcilik":
-
-return{
-icon:"🚀",
-title:"Girişimcilik",
-jobs:["💼 Girişimci","📈 Yönetici","🏦 Finans"]
-};
-
-case "sosyal":
-
-return{
-icon:"❤️",
-title:"Sosyal",
-jobs:["👨‍🏫 Öğretmen","👩‍⚕️ Hemşire","🧠 Psikolog"]
-};
-
-default:
-
-return{
-icon:"🎨",
-title:"Yaratıcı",
-jobs:["🎨 Tasarımcı","📷 Fotoğrafçı","👨‍🍳 Aşçı"]
-};
-
-}
-
-}
-
-function showResult(){
-
-let r=resultInfo(winner());
-
-questionElement.innerHTML=
-`
-🧭 Kariyer DNA'n Hazır!
-`;
-
-answersElement.innerHTML=
-`
 <div class="career-areas">
 
-<h2>${r.icon} ${r.title}</h2>
-
-<p>
-
-Kendini keşfet.
-Mesleğini tanı.
-Geleceğini planla.
-
-</p>
+<h2>🚀 Geleceğin Seni Bekliyor!</h2>
 
 <br>
 
-<p>${r.jobs[0]}</p>
+<p>💻 Teknoloji</p>
 
-<p>${r.jobs[1]}</p>
+<p>🔧 Teknik Meslekler</p>
 
-<p>${r.jobs[2]}</p>
+<p>🚀 Girişimcilik</p>
 
 <br>
 
-<button class="start-button" onclick="restartTest()">
+<button class="start-button"
+
+onclick="restart()">
 
 🔄 Yeniden Başla
 
 </button>
 
 </div>
+
 `;
 
-progressText.textContent="Test Tamamlandı";
+p.textContent="Tamamlandı";
 
-progressBar.style.width="100%";
-
-}
-
-function restartTest(){
-
-currentQuestion=0;
-
-scores.teknoloji=0;
-scores.teknik=0;
-scores.girisimcilik=0;
-scores.sosyal=0;
-scores.yaratici=0;
-
-loadQuestion();
+b.style.width="100%";
 
 }
 
-loadQuestion();
+function restart(){
+
+current=0;
+
+load();
+
+}
+
+load();
