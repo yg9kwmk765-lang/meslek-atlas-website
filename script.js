@@ -1,209 +1,227 @@
-// Questions array
 const questions = [
-  {
-    question: "Hayalindeki gün hangisi?",
-    answers: [
-      "🔧 Bir şey tamir etmek",
-      "👨‍🍳 Yemek yapmak",
-      "💻 Yazılım geliştirmek",
-      "❤️ İnsanlara yardım etmek",
-      "🚀 Kendi işimi kurmak",
-    ],
-  },
-  {
-    question: "En çok hangi alanda çalışmak isterdin?",
-    answers: [
-      "🔬 Bilim & Teknoloji",
-      "📈 Finans & İş",
-      "🎨 Sanat & Tasarım",
-      "🏥 Sağlık & Bakım",
-      "⚙️ Endüstri & Üretim",
-    ],
-  },
-  {
-    question: "Hangisi seni daha çok heyecanlandırır?",
-    answers: [
-      "🏗️ Büyük projeler yaratmak",
-      "📝 Yeni şeyler öğrenmek",
-      "📢 İnsanları motive etmek",
-      "🎯 Zor problemleri çözmek",
-      "🌍 Dünyayı değiştirmek",
-    ],
-  },
-  {
-    question: "Neleri başarmak seni daha mutlu ederdi?",
-    answers: [
-      "🏆 Liderlik yapmak",
-      "📚 Yeni bilgiler araştırmak",
-      "🖌️ Yaratıcı ürünler geliştirmek",
-      "💪 Topluma katkıda bulunmak",
-      "🌟 Kendine ait bir marka yaratmak",
-    ],
-  },
-  {
-    question: "Çözmek isteyeceğin bir problem hangisi olurdu?",
-    answers: [
-      "♻️ Çevre sorunlarını çözmek",
-      "🧑‍🎓 Eğitimde fırsat eşitliği sağlamak",
-      "🧠 Mental sağlığı desteklemek",
-      "💡 Yeni teknolojiler geliştirmek",
-      "🏛️ Daha iyi bir toplum düzeni oluşturmak",
-    ],
-  },
-  {
-    question: "Bir ekipte üstlenmek istediğin rol nedir?",
-    answers: [
-      "🎯 Hedef belirleyen kişi",
-      "⚙️ Analiz yaparak strateji geliştiren kişi",
-      "🔥 Takımı motive eden kişi",
-      "🎨 Yaratıcı fikirler üreten kişi",
-      "👥 İnsanları bir araya getiren kişi",
-    ],
-  },
-  {
-    question: "Hangi ortamda çalışmayı tercih edersin?",
-    answers: [
-      "🏢 Ofis ortamında",
-      "🏠 Evden çalışma",
-      "🌍 Seyahat ederek",
-      "🛠️ Sahada çalışma",
-      "🔬 Laboratuvar ortamında",
-    ],
-  },
-  {
-    question: "Bir projeye başlarken seni motive eden şey nedir?",
-    answers: [
-      "💡 Yeni ve yaratıcı bir fikir",
-      "📈 Büyük bir başarıya ulaşma hedefi",
-      "🛠️ Çözülmesi gereken zorlu problemler",
-      "👥 İnsanların hayatına dokunmak",
-      "🚀 Kendi yeteneklerini geliştirme fırsatı",
-    ],
-  },
-  {
-    question: "Boş zamanlarında en çok yaptığın şey nedir?",
-    answers: [
-      "🎮 Video oyunları oynamak",
-      "📖 Kitap okumak",
-      "⚽ Spor yapmak",
-      "🎨 Çizim veya fotoğraf çekmek",
-      "✨ Yeni bir şeyler denemek",
-    ],
-  },
-  {
-    question: "Hangi başarı hikayesi seni daha çok etkiler?",
-    answers: [
-      "🏆 Spor alanında zirveye ulaşmak",
-      "🎓 Bilimsel bir keşfe imza atmak",
-      "👩‍🍳 Gurme bir restoran sahibi olmak",
-      "💻 Ünlü bir yazılım geliştirmek",
-      "🌟 Sosyal bir girişim başlatmak",
-    ],
-  },
-  {
-    question: "Hangi becerileri geliştirmeyi en heyecan verici buluyorsun?",
-    answers: [
-      "🔩 Teknik beceriler",
-      "🔍 Analitik düşünme",
-      "🎭 Sosyal beceriler",
-      "🎨 Sanatsal beceriler",
-      "🔥 Girişimcilik becerileri",
-    ],
-  },
-  {
-    question: "Bir proje tamamlandıktan sonra seni en çok ne memnun eder?",
-    answers: [
-      "📊 Sonuçların başarısı",
-      "🌟 İnsanlara kattığı değer",
-      "💼 Profesyonel kariyerime katkısı",
-      "🏅 Takımın başarısındaki rolüm",
-      "🚀 Yeni bir başlangıç yapma fırsatı",
-    ],
-  },
+{
+question:"Hayalindeki gün hangisi?",
+answers:[
+{text:"🔧 Bir şey tamir etmek",type:"teknik"},
+{text:"👨‍🍳 Yemek yapmak",type:"yaratici"},
+{text:"💻 Yazılım geliştirmek",type:"teknoloji"},
+{text:"❤️ İnsanlara yardım etmek",type:"sosyal"},
+{text:"🚀 Kendi işimi kurmak",type:"girisimcilik"},
+]
+},
+
+{
+question:"En çok hangi alanda çalışmak isterdin?",
+answers:[
+{text:"🔬 Bilim ve Teknoloji",type:"teknoloji"},
+{text:"📈 Finans ve İş",type:"girisimcilik"},
+{text:"🎨 Sanat ve Tasarım",type:"yaratici"},
+{text:"🏥 Sağlık",type:"sosyal"},
+{text:"⚙️ Üretim",type:"teknik"},
+]
+},
+
+{
+question:"Hangisi seni daha çok heyecanlandırır?",
+answers:[
+{text:"🏗️ Büyük projeler",type:"teknik"},
+{text:"📝 Yeni şeyler öğrenmek",type:"teknoloji"},
+{text:"📢 İnsanları motive etmek",type:"sosyal"},
+{text:"🎨 Yeni fikirler",type:"yaratici"},
+{text:"🚀 Kendi işini kurmak",type:"girisimcilik"},
+]
+}
 ];
 
-let currentQuestionIndex = 0; // Track the current question
-const userAnswers = []; // Store answers
+const scores={
+teknoloji:0,
+teknik:0,
+girisimcilik:0,
+sosyal:0,
+yaratici:0
+};
 
-// DOM Elements
-const questionElement = document.querySelector(".subtitle");
-const answersContainer = document.querySelector(".answers-section");
-const progressText = document.querySelector(".progress-section p");
-const progressBar = document.querySelector(".progress-bar");
+let currentQuestion=0;
 
+const questionElement=document.querySelector(".subtitle");
+const answersElement=document.querySelector(".answers-section");
+const progressText=document.querySelector(".progress-section p");
+const progressBar=document.querySelector(".progress-bar");
 
-// Initialize the first question
-function loadQuestion() {
-  if (currentQuestionIndex < questions.length) {
-    const currentQuestion = questions[currentQuestionIndex];
-    questionElement.textContent = currentQuestion.question;
+function loadQuestion(){
 
-    // Reset and populate answers
-    answersContainer.innerHTML = "";
-    currentQuestion.answers.forEach((answer) => {
-      const button = document.createElement("button");
-      button.classList.add("answer-button");
-      button.textContent = answer;
-      button.addEventListener("click", () => selectAnswer(answer));
-      answersContainer.appendChild(button);
-    });
+if(currentQuestion>=questions.length){
 
-    // Update progress info
-    updateProgress();
-  } else {
-    showCompletionMessage();
-  }
+showResult();
+
+return;
+
 }
 
-// Save the answer and load the next question
-function selectAnswer(answer) {
-  userAnswers.push(answer); // Save user answer
-  currentQuestionIndex++; // Increment question index
-  loadQuestion(); // Load the next question
+let q=questions[currentQuestion];
+
+questionElement.textContent=q.question;
+
+answersElement.innerHTML="";
+
+q.answers.forEach(answer=>{
+
+let button=document.createElement("button");
+
+button.className="answer-button";
+
+button.textContent=answer.text;
+
+button.onclick=function(){
+
+scores[answer.type]++;
+
+currentQuestion++;
+
+loadQuestion();
+
+};
+
+answersElement.appendChild(button);
+
+});
+
+progressText.textContent=(currentQuestion+1)+" / "+questions.length+" Soru";
+
+progressBar.style.width=((currentQuestion+1)/questions.length*100)+"%";
+
 }
 
-// Update progress bar and text
-function updateProgress() {
-  const progressPercentage = ((currentQuestionIndex + 1) / questions.length) * 100;
-  progressText.textContent = `${currentQuestionIndex + 1} / ${questions.length} Soru`;
-  progressBar.style.width = `${progressPercentage}%`;
+function winner(){
+
+let best="";
+
+let max=-1;
+
+for(let key in scores){
+
+if(scores[key]>max){
+
+max=scores[key];
+
+best=key;
+
 }
 
-// Show the completion message
-function showCompletionMessage() {
-  // Display the title and completion message
-  questionElement.textContent = "🧭 Kariyer DNA’n Hazır!";
-  answersContainer.innerHTML = `
-    <p style="font-size: 1.25rem; margin: 20px 0; color: #004d80;">
-      Tebrikler! Testi tamamladın.
-    </p>
-    <div class="career-areas">
-      <p>🥇 Teknoloji</p>
-      <p>🥈 Teknik ve Ustalık</p>
-      <p>🥉 Girişimcilik</p>
-    </div>
-  `;
-
-  // Add a restart button
-  const restartButton = document.createElement("button");
-  restartButton.classList.add("start-button");
-  restartButton.textContent = "Yeniden Başla";
-  restartButton.addEventListener("click", restartTest);
-
-  // Append the restart button to the footer
-  answersContainer.appendChild(restartButton);
-
-  // Update progress
-  progressText.textContent = "Test Tamamlandı";
-  progressBar.style.width = "100%";
 }
 
-// Restart the test
-function restartTest() {
-  currentQuestionIndex = 0; // Reset to the first question
-  userAnswers.length = 0; // Clear previous answers
-  loadQuestion(); // Reload the first question
+return best;
+
 }
 
-// Start the test
+function resultInfo(type){
+
+switch(type){
+
+case "teknoloji":
+
+return{
+icon:"💻",
+title:"Teknoloji",
+jobs:["👨‍💻 Yazılımcı","🤖 Yapay Zeka","📊 Veri Analisti"]
+};
+
+case "teknik":
+
+return{
+icon:"🔧",
+title:"Teknik",
+jobs:["⚡ Elektrikçi","🚗 Oto Tamir","🏗️ Tekniker"]
+};
+
+case "girisimcilik":
+
+return{
+icon:"🚀",
+title:"Girişimcilik",
+jobs:["💼 Girişimci","📈 Yönetici","🏦 Finans"]
+};
+
+case "sosyal":
+
+return{
+icon:"❤️",
+title:"Sosyal",
+jobs:["👨‍🏫 Öğretmen","👩‍⚕️ Hemşire","🧠 Psikolog"]
+};
+
+default:
+
+return{
+icon:"🎨",
+title:"Yaratıcı",
+jobs:["🎨 Tasarımcı","📷 Fotoğrafçı","👨‍🍳 Aşçı"]
+};
+
+}
+
+}
+
+function showResult(){
+
+let r=resultInfo(winner());
+
+questionElement.innerHTML=
+`
+🧭 Kariyer DNA'n Hazır!
+`;
+
+answersElement.innerHTML=
+`
+<div class="career-areas">
+
+<h2>${r.icon} ${r.title}</h2>
+
+<p>
+
+Kendini keşfet.
+Mesleğini tanı.
+Geleceğini planla.
+
+</p>
+
+<br>
+
+<p>${r.jobs[0]}</p>
+
+<p>${r.jobs[1]}</p>
+
+<p>${r.jobs[2]}</p>
+
+<br>
+
+<button class="start-button" onclick="restartTest()">
+
+🔄 Yeniden Başla
+
+</button>
+
+</div>
+`;
+
+progressText.textContent="Test Tamamlandı";
+
+progressBar.style.width="100%";
+
+}
+
+function restartTest(){
+
+currentQuestion=0;
+
+scores.teknoloji=0;
+scores.teknik=0;
+scores.girisimcilik=0;
+scores.sosyal=0;
+scores.yaratici=0;
+
+loadQuestion();
+
+}
+
 loadQuestion();
