@@ -130,7 +130,7 @@ const questionElement = document.querySelector(".subtitle");
 const answersContainer = document.querySelector(".answers-section");
 const progressText = document.querySelector(".progress-section p");
 const progressBar = document.querySelector(".progress-bar");
-const nextButton = document.querySelector(".start-button");
+
 
 // Initialize the first question
 function loadQuestion() {
@@ -165,7 +165,7 @@ function selectAnswer(answer) {
 // Update progress bar and text
 function updateProgress() {
   const progressPercentage = ((currentQuestionIndex + 1) / questions.length) * 100;
-  progressText.textContent = `Question ${currentQuestionIndex + 1} of ${questions.length}`;
+  progressText.textContent = `${currentQuestionIndex + 1} / ${questions.length} Soru`;
   progressBar.style.width = `${progressPercentage}%`;
 }
 
